@@ -46,30 +46,7 @@
 			<header class="main-header">
 				
 				<!-- Header Top -->
-				<div class="header-top">
-					<div class="container">
-						<div class="d-flex justify-content-between align-items-center flex-wrap">
-							<!-- Left Box -->
-							<div class="left-box d-flex align-items-center">
-								<!-- Social Box -->
-								<ul class="social-box">
-									<li><a href="https://www.facebook.com/" class="fa fa-facebook-f"></a></li>
-									<li><a href="https://www.instagram.com/" class="fa fa-instagram"></a></li>
-									<li><a href="https://www.twitter.com/" class="fa fa-twitter"></a></li>
-									<li><a href="https://www.linkedin.com/" class="fa fa-linkedin"></a></li>
-								</ul>
-							</div>
-							
-							<!-- Right Box -->
-							<div class="right-box d-flex align-items-center">
-								<ul class="info-list">
-									<li><a href="mailto:ecasn@gmail.com"><span class="icon fa fa-envelope"></span>ecasn@gmail.com</a></li>
-									<li><a href="#"><span class="icon fa fa-map-marker"></span>Overland Park, Kansas</a></li>
-								</ul>
-							</div>
-						</div>
-					</div>
-				</div>
+				
 				
 				<!-- Header Lower -->
 				<div class="header-lower">
@@ -90,16 +67,16 @@
 											<li class=""><a href="index.html">Home</a>
 												
 											</li>
-											<li class="dropdown"><a href="#">About</a>
+											<li class=""><a href="service.html">Associations</a>
+											</li>
+											<li class=""><a href="blog-2.html">Events</a>
+											</li>
+											<li class="dropdown"><a href="#">About Us</a>
 												<ul>
 													<li><a href="about.html">Know About Us</a></li>
 													<li><a href="team.html">Our Team</a></li>
 													<li><a href="faq.html">FAQ</a></li>
 												</ul>
-											</li>
-											<li class=""><a href="service.html">Associations</a>
-											</li>
-											<li class=""><a href="blog-2.html">Events</a>
 											</li>
 											<li><a href="contact.html">Contact</a></li>
 										</ul>
@@ -163,7 +140,7 @@
                         <div class="separator"></div>
 					</div>
 					<div class="inner-column">
-                        <div class="row clearfix">
+                        <div class="row clearfix" id="service-container">
                             
                             <!-- Service Block -->
                             <div class="service-block-style-two col-lg-4 col-md-4 col-sm-12">
@@ -383,6 +360,35 @@
 		<script src="assets/js/odometer.js"></script>
 		<script src="assets/js/jquery-ui.js"></script>
 		<script src="assets/js/script.js"></script>
+		<script>
+			$(document).ready(function(){
+		var apiUrl = 'http://localhost:3000/associations';
+
+		// Function to fetch services from API
+		function fetchServices() {
+			$.get(apiUrl, function(data) {
+			$.each(data, function(index, service) {
+				console.log("this is the service", service)
+				var serviceBlock = '<div class="service-block-style-two col-lg-4 col-md-4 col-sm-12">';
+				serviceBlock += '<div class="inner-box" style="background-image: url(\'' + 'assets/images/background/contact-bg.jpg' + '\');">';
+				serviceBlock += '<div class="hidden-image" style="background-image: url(\'' + 'assets/images/blog/event-fifth.jpg' + '\');"></div>';
+				serviceBlock += '<div class="hidden-image"></div>';
+				serviceBlock += '<div class="icon"></div>';
+				serviceBlock += '<h5><a href="' + service.link + '">' + service.pointOfContact + '</a></h5>';
+				serviceBlock += '<div class="text">' + service.website + '</div>';
+				serviceBlock += '<a href="' + service.link + '" class="read-more">' + service.pointOfContact + ', ' + service.role + '</a>';
+				serviceBlock += '</div>';
+				serviceBlock += '</div>';
+
+				$('#service-container').append(serviceBlock);
+			});
+			});
+		}
+
+		fetchServices();
+		});
+
+		</script>
 
 		
 
