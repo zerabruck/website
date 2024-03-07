@@ -132,6 +132,10 @@
     align-items: flex-end;
     justify-content: flex-start;
 }
+.blocks-gallery-item img {
+    height:40rem ;
+    width: 100%;
+}
 
 /* Post Footer */
 .blog-details .blog-details-inner .post-footer {
