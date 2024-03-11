@@ -492,12 +492,15 @@
 	left:0px;
 	top:0px;
 	right:0px;
+	background-repeat: no-repeat;
 	bottom:0px;
+	/* width: 100vw; */
 	background-size:cover;
+	background-position: center;
 	-webkit-transform:scale(1);
 	-ms-transform:scale(1);
 	transform:scale(1);
-	background-position: bottom;
+	/* background-position: bottom; */
 	-webkit-transition: all 6000ms linear;
 	-moz-transition: all 6000ms linear;
 	-ms-transition: all 6000ms linear;

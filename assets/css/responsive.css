@@ -329,6 +329,11 @@
 }
 
 @media only screen and (max-width: 767px){
+	.footer-conatiner{
+		flex-direction: column;
+		justify-content: center;
+		gap: 1rem;
+	}
 	
 	.mCSB_inside > .mCSB_container{
 		margin-right:0px;

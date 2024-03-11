@@ -272,7 +272,7 @@
 
 /* Contact Section */
 .business .home-contact-section {
-  background-image: url(../images/background/home-contact-bg.png);
+  background-image: url(../images/background/contact-us-bg.png);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -365,6 +365,12 @@
   background-image: url(../images/background/team-mates-1.jpg);
   background-position: center;
   padding: 200px 0px 100px 0px;
+}
+.events_header{
+  background-image: url(../images/background/events-bg.png) !important;
+}
+.associations_header{
+  background-image: url(../images/background/team-photo-v2.png) !important;
 }
 .business .page_header::before {
   display: none;

@@ -31,8 +31,12 @@
 		var scroll = $(window).scrollTop();
 		if (scroll >= 50) {
 			header.addClass("sticky");
+			header.find("*").css("color", "white !important");
+
 		} else {
 			header.removeClass("sticky");
+			header.find("*").css("color", "black !important");
+
 		}
 	});	
 	
