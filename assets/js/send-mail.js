@@ -10,7 +10,7 @@ document.getElementById('contactForm').addEventListener('submit', function(event
     };
 
     // Send form data to server
-    fetch('http://localhost:3000/send-email', {
+    fetch('https://ecasn-server-1.onrender.com/send-email', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'

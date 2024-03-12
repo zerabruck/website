@@ -330,7 +330,7 @@
 
   var eventId = getUrlParameter('id');
 
-  var detailsApi = 'http://localhost:3000/events/' + eventId;
+  var detailsApi = 'https://ecasn-server-1.onrender.com/events/' + eventId;
 
   function fetchEventDetails() {
     $.get(detailsApi,  function(data) {
@@ -341,7 +341,7 @@
       $('#event-description').text(data.description);
     });
   }
-  var apiUrl = 'http://localhost:3000/events';
+  var apiUrl = 'https://ecasn-server-1.onrender.com/events';
 		  
 		  function fetchEvents() {
 			$.get(apiUrl, function(data) {
