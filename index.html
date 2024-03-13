@@ -288,7 +288,7 @@
 													<h6 id="2event-time"></h6>
 													<h6 id="2event-location"></h6>
 												</div>
-												<h3><a href="#" id="2event-title"></a></h3>
+												<h3><a href="#" id="2event-title">No Events Posted Yet.</a></h3>
 												<div class="text" id="2event-description">
 													</div>
 												
@@ -300,7 +300,7 @@
 													<h6 id="3event-time"></h6>
 													<h6 id="3event-location"></h6>
 												</div>
-												<h3><a href="#" id="3event-title"></a></h3>
+												<h3><a href="#" id="3event-title">No Events Posted Yet.</a></h3>
 												<div class="text" id="3event-description"> 
 												</div>
 												
@@ -398,7 +398,7 @@
 								<div class="testimonial-carousel owl-carousel owl-theme">
 									
 									<!-- Testimonial Block -->
-									<div class="testimonial-block">
+									<!-- <div class="testimonial-block">
 										<div class="inner-box">
 											<div class="upper-box">
 												
@@ -417,10 +417,10 @@
 												</div>
 											</div>
 										</div>
-									</div>
+									</div> -->
 									
 									<!-- Testimonial Block -->
-									<div class="testimonial-block">
+									<!-- <div class="testimonial-block">
 										<div class="inner-box">
 											<div class="upper-box">
 												
@@ -439,10 +439,10 @@
 												</div>
 											</div>
 										</div>
-									</div>
+									</div> -->
 									
 									<!-- Testimonial Block -->
-									<div class="testimonial-block">
+									<!-- <div class="testimonial-block">
 										<div class="inner-box">
 											<div class="upper-box">
 												
@@ -461,24 +461,21 @@
 												</div>
 											</div>
 										</div>
-									</div>
+									</div> -->
 									
 									<!-- Testimonial Block -->
 									<div class="testimonial-block">
 										<div class="inner-box">
-											<div class="upper-box">
+											<div style="height: 14rem; display: flex; align-items: center;" class="upper-box">
 												
-												<div class="text">“Community-Centered Approach: ECASN's Community Outreach Day was a testament to their commitment to serving the community. ”</div>
+												<div class="text">“An organization that brings the Ethiopian diaspora in North America together.”</div>
 											</div>
 											<div class="lower-box">
 												<div class="author-box">
-													<div class="box-inner">
-														<div class="author-image">
-															<span class="quote fa fa-quote-right"></span>
-															<img style="width: 6rem; height: 5rem; object-fit: cover; " src="assets/images/team/first-team-lady.jpeg" alt="img" >
-														</div>
-														<strong>Kevin Miller</strong>
-														<span class="designation">Manager, PPS</span>
+													<div style="display: flex; flex-direction: column; align-items: center;" class="">
+														
+														<strong>Anteneh Habtesellassie</strong>
+														<span class="designation">Silver Spring, MD</span>
 													</div>
 												</div>
 											</div>
@@ -490,17 +487,14 @@
 										<div class="inner-box">
 											<div class="upper-box">
 												
-												<div class="text">“Inspirational Annual Conference: ECASN's Annual Conference exceeded our expectations. It was inspiring to connect with fellow leader.”</div>
+												<div class="text">“This organization creates a network with every Ethiopian Community and supports each other's and creates awareness of our community weaknesses and strengths to grow together as one strong community in Northern America.”</div>
 											</div>
 											<div class="lower-box">
 												<div class="author-box">
-													<div class="box-inner">
-														<div class="author-image">
-															<span class="quote fa fa-quote-right"></span>
-															<img style="width: 6rem; height: 5rem; object-fit: cover; " src="assets/images/team/first-team-lady.jpeg" alt="img" >
-														</div>
-														<strong>Trent Ballinger</strong>
-														<span class="designation">CEO, Bizzbreak Inc.</span>
+													<div style="display: flex; flex-direction: column; align-items: center;" class="">
+														
+														<strong>Ayanaw Hagos</strong>
+														<span class="designation">Nashville Tennessee</span>
 													</div>
 												</div>
 											</div>
@@ -508,7 +502,7 @@
 									</div>
 									
 									<!-- Testimonial Block -->
-									<div class="testimonial-block">
+									<!-- <div class="testimonial-block">
 										<div class="inner-box">
 											<div class="upper-box">
 												
@@ -527,7 +521,7 @@
 												</div>
 											</div>
 										</div>
-									</div>
+									</div> -->
 									
 								</div>
 							</div>
@@ -649,23 +643,15 @@
 				var apiUrl = 'https://ecasn-server-1.onrender.com/events';
 			
 				function fetchEvents() {
-					// var eventCard = $('<div class="business-case-carousel owl-carousel owl-theme"></div>');
 					$.get(apiUrl, function(data) {
-						// data = data.slice(0, 3)
-						console.log("this is the data", data)
 						$.each(data, function(index, event) {
-							// Construct the IDs based on the event index
 							var eventIdPrefix = (index + 1) + "event-";
 
 							$("#" + eventIdPrefix + "time").text(event.eventTime);
 							$("#" + eventIdPrefix + "location").text(event.location);
 							$("#" + eventIdPrefix + "title").text(event.name).attr("href", "#");
-							$("#" + eventIdPrefix + "description").text(event.description);
-							
-							
-							
+							$("#" + eventIdPrefix + "description").text(event.description);	
 						});
-						// $('#event-container').append(eventCard);
 					});
 				}
 			
